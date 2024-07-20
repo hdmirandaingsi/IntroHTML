@@ -39,3 +39,35 @@ fetch(url)
     .catch(error => {
         console.error(`Error: ${error}`);
     });
+
+
+/* Calculadora SIMPLE */
+ function calcular() {
+  const numero1 = parseInt(document.getElementById('numero1').value);
+  const numero2 = parseInt(document.getElementById('numero2').value);
+  const operacion = document.getElementById('operacion').value;
+
+  let resultado;
+
+  switch (operacion) {
+    case 'suma':
+      resultado = numero1 + numero2;
+      break;
+    case 'resta':
+      resultado = numero1 - numero2;
+      break;
+    case 'multiplicacion':
+      resultado = numero1 * numero2;
+      break;
+    case 'division':
+      if (numero2 === 0) {
+        resultado = 'No se puede dividir por cero';
+      } else {
+        resultado = numero1 / numero2;
+      }
+      break;
+  }
+
+  document.getElementById('resultadoOperacion').textContent = resultado.toString();
+  console.log(resultado);
+}
