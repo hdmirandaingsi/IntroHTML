@@ -40,7 +40,6 @@ fetch(url)
         console.error(`Error: ${error}`);
     });
 
-
 /* Calculadora SIMPLE */
  function calcular() {
   const numero1 = parseInt(document.getElementById('numero1').value);
