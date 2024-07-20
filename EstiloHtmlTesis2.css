@@ -1,0 +1,120 @@
+/*PRIMERA TABLA*/
+.SelectoPrimeTabla {
+	/* Fondo de la tabla */
+	background-color: #F7F7F7; /* Blanco claro */
+	/* Encabezado de la tabla */
+}
+
+
+/* Filas impares */
+tr:nth-child(odd) {
+	background-color: #F2F2F2; /* Gris claro */
+}
+
+/* Filas pares */
+tr:nth-child(even) {
+	background-color: #E5E5E5; /* Gris medio */
+}
+
+/* Celdas de la tabla */
+td {
+	padding: 10px;
+	border: 1px solid #CCC; /* Gris oscuro */
+}
+
+/* Etiquetas de la tabla */
+th {
+	padding: 10px;
+	border: 1px solid #CCC; /* Gris oscuro */
+	background-color: #C9E4CA; /* Verde claro */
+	color: #333; /* Negro */
+}
+
+
+/* ejemplos de FORMs */
+
+
+
+
+ 
+
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 175px;
+	background: #2a2a2a;
+}
+
+.button {
+	display: flex;
+	align-items: center;
+	width: 225px;
+	margin: 20px 35px;
+	font-size: 38px;
+	font-family: 'Baloo Bhai', cursive;
+	color: #f5f8fa;
+	text-decoration: none;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+	border-radius: 5px;
+}
+ 
+/* Selectos para los HTML(inputos)*/
+.seletorFormas {
+	background-color: #333; /* gris oscuro */
+	border: 1px solid #fff; /* borde blanco */
+	padding: 20px;
+	width: 85%; /* ancho del sidebar */
+	float: left; /* flotar a la izquierda */
+	color: #ffff00; /* amarillo */
+	font-size: 18px; /* tamaño de fuente */
+	font-weight: bold; /* negrita */
+	margin: 20px;
+}
+
+
+
+/* PARA DROP and Drag */
+#div1dropdrag, #div1dropdra2 {
+	float: left;
+	width: 100px;
+	height: 35px;
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid black;
+}
+
+/*         <!-- Errores HTTP -->    */
+#http-status-messages {
+	display: none;
+}
+
+
+
+
+
+
+.icon {
+	flex-grow: 1;
+	text-align: right;
+}
+
+.text {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 2;
+	text-align: center;
+}
+
+.follow {
+	line-height: 20px;
+	margin-top: 20px;
+	padding: 0;
+}
+
+.name {
+	margin-bottom: 5px;
+	font-size: 20px;
+}

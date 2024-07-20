@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="generator" content="pandoc">
+    <meta name="author" content="bucephalus.org">
+    <title> Henry : HTML5 </title>
+    <link rel="stylesheet" type="text/css" href="./HtmlTesis_files/CodeDown.css" media="all">
+    <link rel="stylesheet" type="text/css" href="./HtmlTesis_files/CodeDownPrint.css" media="all">
+    <!-- icono -->
+    <link rel="icon" type="image/png" href="iconoH.png">
+
+    <meta name="chromesniffer" id="chromesniffer_meta" content="{&quot;SPDY&quot;:-1}">
+
+    <!--importando librerias -->
+    <!-- Incluir plotly.js y mathjs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+
+
+
+    <!--importando para la web : https://aframe.io/  librerias -->
+    <!--introduccion a Realidad Aumentada por Mobil -->
+
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #graph {
+            width: 800px;
+            height: 600px;
+            margin: 40px auto;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="header">
+        <h1 class="title"><a href="http://bucephalus.org/text/CanvasHandbook/">principios basicos de HTML </a></h1>
+        <h2 class="author"><a href="http://bucephalus.org/"> HTML 5 </a></h2>
+        <h3 class="date">September 2013 (bug fix update on October 8, 2013)</h3>
+    </div>
+
+
+
+    <!--incorporando etiqueta DIV con todos sus atributos -->
+    <!--
+        class : asignacion de CSS externo
+        style : CSS interno en HTML para aplicar color de fondo y mas propiedades class : asignacion de CSS externo
+        title : cuando el mouse este Sobre el div
+         -->
+
+    <div id="miDiv"
+         class="selecMiClaseDiv"
+         title="Este es un div con atributos"
+         lang="es"
+         dir="ltr"
+         tabindex="0"
+         role="region"
+         aria-label="Div con atributos"
+         data-toggle="tooltip"
+         data-placement="top"
+         data-original-title="Tooltip de ejemplo">
+        ul = atributos: id , class,title,lang,dir,tabindex,role,aria-label,data-toggle ,data-placement,data-original-title
+    </div>
+
+
+
+
+    <!--incorporando etiqueta ul  con todos sus atributos -->
+    <!--
+        class : asignacion de CSS externo
+        style : CSS interno en HTML para aplicar color de fondo y mas propiedades class : asignacion de CSS externo
+        tabindex : para que se pueda Seleccionar con TAB
+
+    -->
+    <div id="miUl" class="selecMiClaseUl" title="Este es un ul con atributos">
+        <ul title="Lista de frutas" id="fruitList" class="selecMiClaseli">
+            <li>Frutas</li>
+            <li>
+                <ul>
+                    <li>Frutas frescas</li>
+                    <li>
+                        <ul>
+                            <li>Manzanas</li>
+                            <li>Plátanos</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>Frutas secas</li>
+                            <li>
+                                <ul>
+                                    <li>Dátiles</li>
+                                    <li>Pasas</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Otro item</li>
+        </ul>
+        ul = atributos: title , id,class,style,square,tabindex,role,aria-label,data-toggle ,data-placement,data-original-title
+    </div>
+
+
+
+
+
+    <!--incorporando etiqueta a o ancla , con atributos -->
+    <!--
+        class : asignacion de CSS externo
+        style : CSS interno en HTML para aplicar color de fondo y mas propiedades class : asignacion de CSS externo
+        tabindex : para que se pueda Seleccionar con TAB
+    -->
+
+    <div id="miA" class="selecMiA" title="documento para etiqueta ancla">
+        <a class="selecA" href="https://developer.mozilla.org/es/docs/Web/HTML/Element/a" target="_blank">Visitar(en nueva pestaña)</a>
+        Visitar otras paginas web con etiqueta "a"
+    </div>
+
+
+
+
+
+    <!-- creando un INDICE como PLANTILLA -->
+    <!--
+        class : asignacion de CSS externo
+        style : CSS interno en HTML para aplicar color de fondo y mas propiedades class : asignacion de CSS externo
+        tabindex : para que se pueda Seleccionar con TAB
+    -->
+
+    <div id="miIndice" class="selecMiA" title="documento para etiqueta ancla">
+        <div>
+            <a class="selecA" href="#top" id="visit-inferior">este prueba de href con #top</a>
+            <a class="selecA" href="#" id="visit-inferior">este prueba de href con #(Vacio)</a>
+        </div>
+
+
+
+        <a class="selecA" href="#inferior" id="visit-inferior">Visitar(Inferior)</a>
+        <a class="selecA" href="#medio" id="visit-medio">Visitar(Medio)</a>
+        <a class="selecA" href="#superior" id="visit-superior">Visitar(Superior)</a>
+    </div>
+
+    <h1 id="superior" accesskey="s">Superior</h1>
+    <button tabindex="1" role="button">Mi botón</button>
+    <h2 id="medio">Medio</h2>
+
+    <h3 id="inferior">Inferior</h3>
+
+    <script>
+        document.getElementById('visit-inferior').addEventListener('click', function () {
+            document.getElementById('inferior').scrollIntoView();
+        });
+
+        document.getElementById('visit-medio').addEventListener('click', function () {
+            document.getElementById('medio').scrollIntoView();
+        });
+
+        document.getElementById('visit-superior').addEventListener('click', function () {
+            document.getElementById('superior').scrollIntoView();
+        });
+
+        document.getElementById('superior').addEventListener('click', function () {
+            document.getElementById('miA').scrollIntoView();
+        });
+
+        document.getElementById('medio').addEventListener('click', function () {
+            document.getElementById('miA').scrollIntoView();
+        });
+
+        document.getElementById('inferior').addEventListener('click', function () {
+            document.getElementById('miA').scrollIntoView();
+        });
+    </script>
+
+
+
+    <ul class="selecMiClaseli">
+        <li><a href="https://github.com/microsoft>">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/company/microsoft>">LinkedIn</a></li>
+        <li><a href="https://twitter.com/microsoft>">Twitter</a></li>
+    </ul>
+
+
+
+
+    <!-- 5 div , experimentando con sus respectivos SelectoresCSS -->
+    <!--
+        class : asignacion de CSS externo
+        style : CSS interno en HTML para aplicar color de fondo y mas propiedades class : asignacion de CSS externo
+        tabindex : para que se pueda Seleccionar con TAB
+    -->
+    <div id="miPriDiv" class="selecmiPriDiv" title="mi primer DIV">
+        <ul title="Lista de frutas" id="fruitList">
+            <li>Lista de DIV</li>
+            <li>
+                <div id="miSegDiv" class="selecmiSeguDiv" title="mi segundo DIV">
+                    <ul>
+                        <li>Frutas frescas</li>
+                        <li>
+                            <div id="miTerDiv" class="selecmiTerDiv" title="mi tercero DIV">
+                                <ul>
+                                    <li>Manzanas</li>
+                                    <li>Plátanos</li>
+                                    <li>Dátiles</li>
+                                    <li>Pasas</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>Frutas secas</li>
+                    </ul>
+                </div>
+            </li>
+            <li>Otro item</li>
+        </ul>
+    </div>
+
+
+
+
+    <!-- dl , dt y  dd   -->
+    <!--
+    <dt> se utiliza para definir el término o título de la definición.
+    <dd> se utiliza para definir la descripción o definición del término
+        -->
+
+
+    <dl>
+        <dt>Término 1</dt>
+        <dd>Definición del término 1.</dd>
+        <dt>Término 2</dt>
+        <dd>Definición del término 2.</dd>
+    </dl>
+
+
+
+    <!-- Contenedor que envuelve todos los elementos con el estilo específico -->
+    <div class="maquina-escribir-container">
+        <div style="font-size: 20px; color: #2457ff; background-color: #313030">
+            <h1 class="typewriter"> primer EfectoMaquina de Escribir (HTML+CSS+JS) <span class="cursor" id="cursor">|</span></h1>
+
+            <div id="maquinas"></div>
+
+            <!--SEGUNDO Efecto Maquina de Escribir -->
+            <p style="font-size: 20px; color: #2457ff; background-color: #313030"> SEGUNDO Efecto Maquina de Escribir </p>
+
+            <div>
+                <div id="SegEfecMaqui" class="SegEfecMaqui"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <h1>HTML formatos de los Elementos en un Parrafo </h1>
+    <p><b>texto en NEGRITO</b></p>
+    <p><strong>Texto Importante con "Strong"</strong></p>
+    <p><i>Texto Inclidado con italic </i></p>
+    <p><em> Texto enfatizado</em></p>
+    <p><mark>Texto Marcado (amarillo)</mark></p>
+    <p><small>Texto Pequeño con etiqueta SMALL </small></p>
+    <p><del>This text is deleted</del></p>
+    <p><ins>This text is inserted</ins></p>
+    <p>H<sub>2</sub>O</p>
+    <p>E = m*c<sup>2</sup></p>
+
+
+
+    <p>ocupando BlockQuote con Atributo Cite </p>
+    <blockquote cite="https://www.w3.org/TR/html52/">
+        <p>El elemento <code>&lt;blockquote&gt;</code> se utiliza para indicar es un codigo con CODEa.</p>
+    </blockquote>
+    <p>Por ejemplo, podemos utilizar el elemento <code>&lt;q&gt;</code> para indicar que una parte del texto es una cita:</p>
+    <p>Según <q cite="https://www.w3.org/TR/html52/">el estándar HTML 5.2</q>, el elemento <code>&lt;q&gt;</code> se utiliza para indicar que el texto es una cita.</p>
+    <p>El elemento <code>&lt;abbr&gt;</code> se utiliza para abreviar un término:</p>
+    <p>La organización <abbr title="World Wide Web Consortium">W3C</abbr> es responsable de establecer los estándares para la web.</p>
+    <p>El elemento <code>&lt;address&gt;</code> se utiliza para indicar la dirección de contacto de un autor:</p>
+    <address>
+        <p>
+            John Doe<br>
+            123 Main St<br>
+            Anytown, CA 12345<br>
+            <a href="mailto:johndoe@example.com">johndoe@example.com</a>
+    </address>
+    <p>El elemento <code>&lt;cite&gt;</code> se utiliza para indicar la fuente de una cita:</p>
+    <p>Según <cite>El estándar HTML 5.2</cite>, el elemento <code>&lt;q&gt;</code> se utiliza para indicar que el texto es una cita.</p>
+    <p>Finalmente, el elemento <code>&lt;bdo&gt;</code> se utiliza para indicar el dirección del texto:</p>
+    <p>El texto siguiente se mostrará en dirección opuesta: <bdo dir="rtl">¡Hola mundo!</bdo></p>
+
+
+
+
+
+
+
+
+    <h1>Ejemplos de Enlaces HTML</h1>
+
+    <h2>Ejemplo 1: Enlace a una página web</h2>
+    <p><a href="https://www.w3schools.com/">ocuapndo A con Atributo href </a></p>
+
+    <h2>Ejemplo 2: Enlace que abre en una nueva ventana</h2>
+    <p><a href="https://www.w3schools.com/" target="_blank">Visit W3Schools!</a></p>
+
+    <h2>Ejemplo 3: Enlace a una página local (URL relativa)</h2>
+    <p><a href="html_images.asp">HTML Images</a></p>
+
+    <h2>Ejemplo 4: Enlace que utiliza una imagen</h2>
+    <p>
+        <a href="default.asp">
+            <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;">
+        </a>
+    </p>
+    <iframe src="https://giphy.com/embed/3o6Mb6NRhLMdnVhPby" width="480" height="370" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/season-11-the-simpsons-11x2-3o6Mb6NRhLMdnVhPby">via GIPHY</a></p>
+
+    <h2>Ejemplo 5: Enlace a una dirección de correo electrónico</h2>
+    <p><a href="mailto:someone@example.com">Send email</a></p>
+
+    <h2>Ejemplo 6: Botón como enlace (con JavaScript)</h2>
+    <p><button onclick="document.location='default.asp'">HTML Tutorial</button></p>
+
+
+    <h2>Ejemplo 8: Enlace a una página web con URL absoluta</h2>
+    <p><a href="https://www.w3schools.com/html/default.asp">HTML tutorial</a></p>
+
+    <h2>Ejemplo 9: Enlace a una página local con URL relativa</h2>
+    <p><a href="/html/default.asp">HTML tutorial</a></p>
+
+    <h2>Ejemplo 10: Enlace a una página en la misma carpeta</h2>
+    <p><a href="default.asp">HTML tutorial</a></p>
+
+
+
+
+
+    <details>
+        <summary>Ver más información</summary>
+        <div>
+            <p>Información del contenido del acordeón.</p>
+        </div>
+    </details>
+
+
+
+
+
+
+
+    <!--- ejemplo de IMAGENES-->
+    <h1>Ejemplos de Imágenes HTML</h1>
+
+    <h2>Ejemplo 1: Imagen simple</h2>
+    <p><img src="pic_trulli.jpg" alt="Italian Trulli"></p>
+
+    <h2>Ejemplo 2: Imagen con tamaño especificado</h2>
+    <p><img src="img_girl.jpg" alt="Girl in a jacket" style="width:500px;height:600px;"></p>
+
+    <h2>Ejemplo 3: Imagen con tamaño especificado utilizando atributos width y height</h2>
+    <p><img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600"></p>
+
+    <h2>Ejemplo 4: Imagen en otra carpeta</h2>
+    <p><img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;"></p>
+
+    <h2>Ejemplo 5: Imagen en otro servidor/sitio web</h2>
+    <p><img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com"></p>
+
+    <h2>Ejemplo 6: Imagen animada</h2>
+    <p><img src="programming.gif" alt="Computer Man" style="width:48px;height:48px;"></p>
+
+    <h2>Ejemplo 7: Imagen como enlace</h2>
+    <p>
+        <a href="default.asp">
+            <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;">
+        </a>
+    </p>
+
+    <h2>Ejemplo 8: Imagen flotante</h2>
+    <p><img src="smiley.gif" alt="Smiley face" style="float:right;width:42px;height:42px;">The image will float to the right of the text.</p>
+
+    <p><img src="smiley.gif" alt="Smiley face" style="float:left;width:42px;height:42px;">The image will float to the left of the text.</p>
+
+
+
+
+    <div>
+
+        <!-- Imagenes  -->
+        <h1>Mapa de Imágenes HTML</h1>
+
+        <img src="workplace.jpg" alt="Workplace" usemap="#workmap">
+
+        <map name="workmap">
+            <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+            <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+            <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+        </map>
+
+        <p>Intente hacer clic en la computadora, el teléfono o la taza de café en la imagen de arriba.</p>
+
+        <h2>Ejemplo 2: Mapa de Imagen con forma poligonal</h2>
+
+        <img src="french_food.jpg" alt="French Food" usemap="#foodmap">
+
+        <map name="foodmap">
+            <area shape="poly" coords="140,121,181,116,204,160,204,222,191,270,140,329,85,355,58,352,37,322,40,259,103,161,128,147" alt="Croissant" href="croissant.htm">
+        </map>
+
+        <p>Intente hacer clic en el croissant en la imagen de arriba.</p>
+
+        <h2>Ejemplo 3: Mapa de Imagen con JavaScript</h2>
+
+        <img src="workplace.jpg" alt="Workplace" usemap="#jsmap">
+
+        <map name="jsmap">
+            <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm" onclick="myFunction()">
+        </map>
+
+        <script>
+            function myFunction() {
+                alert("You clicked the coffee cup!");
+            }
+        </script>
+
+        <p>Intente hacer clic en la taza de café en la imagen de arriba.</p>
+
+
+    </div>
+
+
+
+
+
+
+
+    <div>
+        <h1>Con mis propias IMAGENES</h1>
+
+        <!-- Ejemplo de <picture> con diferentes tamaños de imagen -->
+        <picture>
+            <source media="(min-width: 650px)" srcset="Imagen1.png">
+            <source media="(min-width: 465px)" srcset="Imagen2.png">
+            <img src="Imagen1.png" alt="Imagen de ejemplo">
+        </picture>
+
+        <!-- Ejemplo de <picture> con diferentes formatos de imagen -->
+        <picture>
+            <source srcset="Imagen1.png">
+            <source srcset="Imagen3.jpg">
+            <img src="Imagen1.png" alt="Beatles" style="width:auto;">
+        </picture>
+
+        <!-- Ejemplo de <img> básico -->
+        <img src="Imagen2.png" alt="Imagen de ejemplo">
+
+        <!-- Ejemplo de <map> y <area> -->
+        <img src="Imagen3.png" alt="Imagen de mapa" usemap="#map">
+        <map name="map">
+            <area shape="rect" coords="0,0,100,100" href="https://www.google.com" alt="Google">
+            <area shape="circle" coords="150,150,50" href="https://www.bing.com" alt="Bing">
+        </map>
+    </div>
+
+
+
+    <h1>Imagen de Fondo en HTML</h1>
+
+    <!-- Agregar imagen de fondo a un elemento HTML -->
+    <div style="background-image: url('img_girl.jpg'); width: 500px; padding: 20px; border: 1px solid #ccc;">
+        <p>Este párrafo tiene una imagen de fondo.</p>
+    </div>
+
+    <!-- Especificar imagen de fondo en el body -->
+    <div style="width: 500px; padding: 20px; border: 1px solid #ccc;">
+        <p>La imagen de fondo se aplica a toda la página.</p>
+    </div>
+
+    <!-- Estirar imagen de fondo -->
+    <div style="background-image: url('img_girl.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%; width: 500px; height: 300px; padding: 20px; border: 1px solid #ccc;">
+        <p>La imagen de fondo se estira para ajustarse a todo el elemento.</p>
+    </div>
+
+    <!-- Ejercicio: Agregar imagen de fondo llamada "myimage.png" en un elemento HTML -->
+    <div style="background-image: url('myimage.png'); width: 500px; padding: 20px; border: 1px solid #ccc;">
+        <p>Este párrafo tiene una imagen de fondo llamada "myimage.png".</p>
+    </div>
+
+
+
+
+    <!-- DIFERENTES TABLAS -->
+
+    <p> MUCHAS TABLAS DIEFERENTES USOS </p>
+    <!-- DIFERENTES TABLAS -->
+
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+        </tr>
+        <tr>
+            <td>Juan</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>Maria</td>
+            <td>30</td>
+        </tr>
+    </table>
+
+    <!-- DIFERENTES TABLAS -->
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+        </tr>
+        <tr>
+            <td>Juan</td>
+            <td>Pérez</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>Maria</td>
+            <td>García</td>
+            <td>30</td>
+        </tr>
+    </table>
+    <!-- DIFERENTES TABLAS -->
+    <table>
+        <tr>
+            <th>Imagen</th>
+            <th>Descripción</th>
+        </tr>
+        <tr>
+            <td><img src="imagen1.jpg" alt="Imagen 1"></td>
+            <td>Imagen 1</td>
+        </tr>
+        <tr>
+            <td><img src="imagen2.jpg" alt="Imagen 2"></td>
+            <td>Imagen 2</td>
+        </tr>
+    </table>
+
+    <!-- DIFERENTES TABLAS -->
+    <table>
+        <tr>
+            <th>Enlace</th>
+            <th>Descripción</th>
+        </tr>
+        <tr>
+            <td><a href="https://www.google.com">Google</a></td>
+            <td>Buscar en Google</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.bing.com">Bing</a></td>
+            <td>Buscar en Bing</td>
+        </tr>
+    </table>
+
+    <!-- DIFERENTES TABLAS -->
+    <table>
+        <tr>
+            <th>Lista</th>
+            <th>Descripción</th>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>Elemento 1</li>
+                    <li>Elemento 2</li>
+                    <li>Elemento 3</li>
+                </ul>
+            </td>
+            <td>Lista de elementos</td>
+        </tr>
+    </table>
+
+    <!-- DIFERENTES TABLAS -->
+    <table>
+        <tr>
+            <th>Tabla anidada</th>
+            <th>Descripción</th>
+        </tr>
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                    </tr>
+                    <tr>
+                        <td>Juan</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>Maria</td>
+                        <td>30</td>
+                    </tr>
+                </table>
+            </td>
+            <td>Tabla anidada</td>
+        </tr>
+    </table>
+
+
+    <!-- DIFERENTES TABLAS -->
+
+    <table style="border-collapse:collapse;">
+        <tr>
+            <th style="background-color:#f0f0f0;">Nombre</th>
+            <th style="background-color:#f0f0f0;">Edad</th>
+        </tr>
+        <tr>
+            <td style="border:1px solid #ccc;">Juan</td>
+            <td style="border:1px solid #ccc;">25</td>
+        </tr>
+        <tr>
+            <td style="border:1px solid #ccc;">Maria</td>
+            <td style="border:1px solid #ccc;">30</td>
+        </tr>
+    </table>
+
+
+
+    <!-- DIFERENTES TABLAS -->
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th colspan="2">Contact Information</th>
+        </tr>
+        <tr>
+            <td>John Doe</td>
+            <td>Email:</td>
+            <td>john.doe@example.com</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Jane Doe</td>
+            <td>Email:</td>
+            <td>jane.doe@example.com</td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+            <td>555-555-5555</td>
+        </tr>
+    </table>
+
+
+
+
+    <!-- DIFERENTES TABLAS -->
+    <div style="overflow-y: scroll; height: 100px;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alice</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>Bob</td>
+                    <td>30</td>
+                </tr>
+                <!-- More rows here -->
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- DIFERENTES TABLAS -->
+    <p> TABLA : HTML  + JS</p>
+    <table id="sortable-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Eve</td>
+                <td>45</td>
+            </tr>
+            <tr>
+                <td>Frank</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>henry</td>
+                <td>45</td>
+            </tr>
+            <tr>
+                <td>oooo</td>
+                <td>50</td>
+            </tr>
+            <!-- More rows here -->
+        </tbody>
+    </table>
+
+    <script>
+        const table = document.getElementById('sortable-table');
+        const headers = table.querySelectorAll('th');
+
+        headers.forEach((header) => {
+            header.addEventListener('click', () => {
+                const column = header.cellIndex;
+                const rows = table.querySelectorAll('tbody tr');
+
+                rows.forEach((row) => {
+                    row.parentNode.appendChild(row);
+                });
+
+                const sortedRows = Array.from(rows).sort((a, b) => {
+                    const aValue = a.children[column].textContent;
+                    const bValue = b.children[column].textContent;
+
+                    if (aValue < bValue) {
+                        return -1;
+                    }
+                    if (aValue > bValue) {
+                        return 1;
+                    }
+                    return 0;
+                });
+
+                sortedRows.forEach((row) => {
+                    table.querySelector('tbody').appendChild(row);
+                });
+            });
+        });
+    </script>
+
+
+
+    <!-- Tablas y Tamaños -->
+    <table border="1" cellpadding="10" cellspacing="0" style="width:100%; border-collapse: collapse;">
+        <caption style="caption-side: top; text-align: center; font-weight: bold;">Título de la tabla</caption>
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 40%;">
+            <col style="width: 40%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Columna 1</th>
+                <th>Columna 2</th>
+                <th>Columna 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Fila 1, Celda 1</td>
+                <td>Fila 1, Celda 2</td>
+                <td>Fila 1, Celda 3</td>
+            </tr>
+            <tr>
+                <td>Fila 2, Celda 1</td>
+                <td>Fila 2, Celda 2</td>
+                <td>Fila 2, Celda 3</td>
+            </tr>
+            <tr>
+                <td>Fila 3, Celda 1</td>
+                <td>Fila 3, Celda 2</td>
+                <td>Fila 3, Celda 3</td>
+            </tr>
+            <tr>
+                <td>Fila 4, Celda 1</td>
+                <td>Fila 4, Celda 2</td>
+                <td>Fila 4, Celda 3</td>
+            </tr>
+            <tr>
+                <td>Fila 5, Celda 1</td>
+                <td>Fila 5, Celda 2</td>
+                <td>Fila 5, Celda 3</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" style="text-align: center; font-weight: bold;">Pie de tabla</td>
+            </tr>
+        </tfoot>
+    </table>
+
+
+
+    <h2>Ancho de tabla HTML</h2>
+    <style>
+        td:nth-child(even) {
+            background-color: #808080;
+        }
+    </style>
+
+    <table>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>35</td>
+        </tr>
+        <tr>
+            <td>Jane</td>
+            <td>Doe</td>
+            <td>28</td>
+        </tr>
+    </table>
+
+
+
+
+
+    <table style="width:100%">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Age</th>
+        </tr>
+        <tr style="height:200px">
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+    </table>
+
+
+
+    <table style="width:300px">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Puntos</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+    </table>
+
+
+
+
+
+
+    <!-- EJEMPLO De Iframe -->
+    <p> Ejemplo iframe </p>
+
+    <h1>Ejemplo de iframe</h1>
+
+    <iframe src="https://www.example.com"
+            height="400"
+            width="600"
+            title="Ejemplo de página web incrustada"
+            style="border: none; background-color: #f0f0f0;">
+    </iframe>
+
+
+
+
+    <table border="1" cellpadding="10" cellspacing="0" style="width:100%; border-collapse: collapse;">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 40%;">
+            <col style="width: 40%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Columna 1</th>
+                <th>Columna 2</th>
+                <th>Columna 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Fila 1, Celda 1</td>
+                <td>Fila 1, Celda 2</td>
+                <td>Fila 1, Celda 3</td>
+            </tr>
+            <tr>
+                <td>Fila 2, Celda 1</td>
+                <td>Fila 2, Celda 2</td>
+                <td>Fila 2, Celda 3</td>
+            </tr>
+            <tr>
+                <td>Fila 3, Celda 1</td>
+                <td>Fila 3, Celda 2</td>
+                <td>Fila 3, Celda 3</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+    <p>BANDERA DE el salvador , con colores HEX: #1F189B y #FFFFFF  </p>
+
+    <svg width="200" height="100">
+        <!-- Franja azul celeste -->
+        <!-- Franja azul celeste -->
+        <rect x="0" y="0" width="200" height="33" fill="#1F189B">
+            <tooltip>
+                <text x="10" y="20" font-size="22" font-family="Arial">Banderas de El Salvador</text>
+            </tooltip>
+        </rect>
+
+        <!-- Franja blanca -->
+        <rect x="0" y="33" width="200" height="33" fill="#FFFFFF" pointer-events="none" />
+        <title>Banderas de El Salvador: blanco</title>
+
+        <!-- Franja azul cobalto -->
+        <rect x="0" y="66" width="200" height="34" fill="#1F189B">
+            <title>Banderas de El Salvador: AZUL</title>
+        </rect>
+    </svg>
+
+
+    <!--SVG -->
+
+    <p>creando un EMOJI con UTF-8 definiendo &=Emoji y #= numero(hexadecimal) respecto al EMOJI </p>
+
+    <p style="font-size:100px">&#128540;</p>
+
+
+
+    <!-- jemeplo de tooltip-->
+    <h2 style="font-size: 20px; color: #2457ff; background-color: #313030"> Ejemplo de tooltip(CSS) </h2>
+
+    <label for="password">Password:</label>
+    <input aria-describedby="passwordrules" id="password" type="password" />
+    <div role="tooltip" id="passwordrules">
+        <p>Password Rules:</p>
+        <ul>
+            <li>Minimum of 8 characters</li>
+            <li>
+                Include at least one lowercase letter, one uppercase letter, one number
+                and one special character
+            </li>
+            <li>Unique to this website</li>
+        </ul>
+    </div>
+
+
+
+    <!-- ejemplo del uso de code , pre , br , kbd -->
+    <h2 style="font-size: 20px; color: #2457ff; background-color: #313030"> Ejemplo  Elementos para CODIGO </h2>
+    <p> poniendo un parrafo </p>
+    <p>Press <kbd> Uso del kbd </kbd> to save the document.</p>
+
+
+    <p><samp>Uso del samp .<br> dentro de samp otro br </samp></p>
+
+    <p>Definiendo un codigo como ejemplo  </p>
+<pre>
+    <code>
+    
+    console.log( un pre despues un code );
+  </code>
+</pre>
+
+    <p>Define some variables in a mathematical expression:</p>
+    <p>The area of a triangle is: 1/2 x <var>variable</var> x <var>variable </var> , donde  <var>b</var> is the base, and <var>h</var> is the vertical height.</p>
+
+    <p>Define some preformatted text:</p>
+<pre>
+  pre sirve para en marcar CODIGO 
+</pre>
+
+
+
+
+    <!---->
+    <p style="font-size: 20px; color: #2457ff; background-color: #313030">Entidades HTML caracteres reservados </p>
+
+    <p>Unicode es un estándar de codificación de caracteres diseñado para facilitar el tratamiento informático, transmisión, y visualización de textos de numerosos idiomas y disciplinas técnicas:</p>
+    <p>Menor que: &lt; o &#60;</p>
+    <p>Mayor que: &gt; o &#62;</p>
+    <p>Ampersand: &amp; o &#38;</p>
+    <p>Unicoda: &amp; o &#1302;</p>
+
+   
+
+    <p>Uso de entidades HTML para representar caracteres especiales:</p>
+    <p>Cent: &cent; o &#162;</p>
+    <p>Pound: &pound; o &#163;</p>
+    <p>Yen: &yen; o &#165;</p>
+    <p>Euro: &euro; o &#8364;</p>
+
+    <p>Uso de entidades HTML para representar signos diacríticos:</p>
+    <p>a con grave: a&#768; (à)</p>
+    <p>a con agudo: a&#769; (á)</p>
+    <p>a con circumflexo: a&#770; (â)</p>
+    <p>a con tilde: a&#771; (ã)</p>
+
+    <p>Uso de entidades HTML para representar espacios indivisibles:</p>
+    <p>10&nbsp;kilómetros por hora</p>
+    <p>22:00&nbsp;horas</p>
+
+    <p>Uso de entidades HTML para representar guiones indivisibles:</p>
+    <p>Este es un guión indivisible: &#8209;</p>
+
+
+    <!--incio del INDICE Global  -->
+
+    <div id="TOC">
+        <ul>
+            <li>
+                <a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#introduction"><span class="toc-section-number">1</span> Introduction</a><ul>
+                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#official-standards"><span class="toc-section-number">1.1</span> Official standards</a></li>
+                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#requirements-a-browser-with-support-for-html5-and-javascript"><span class="toc-section-number">1.2</span> Requirements: a browser with support for HTML5 and JavaScript</a></li>
+                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#a-first-example"><span class="toc-section-number">1.3</span> A first example</a></li>
+                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#basic-setup"><span class="toc-section-number">1.4</span> Basic setup</a></li>
+                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#points-xy-and-the-canvas-coordinates"><span class="toc-section-number">1.5</span> Points <code>(x,y)</code> and the canvas coordinates</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#reference"><span class="toc-section-number">2</span> Reference</a><ul>
+                    <li>
+                        <a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#htmlcanvaselement"><span class="toc-section-number">2.1</span> <code>HTMLCanvasElement</code></a><ul>
+                            <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#width"><span class="toc-section-number">2.1.1</span> <code>width</code></a></li>
+                            <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#height"><span class="toc-section-number">2.1.2</span> <code>height</code></a></li>
+                            <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#getcontext2d"><span class="toc-section-number">2.1.3</span> <code>getContext('2d')</code></a></li>
+                            <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#todataurl"><span class="toc-section-number">2.1.4</span> <code>toDataURL()</code></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#canvasrenderingcontext2d"><span class="toc-section-number">2.2</span> <code>CanvasRenderingContext2D</code></a><ul>
+                            <li>
+                                <a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#reference-back-to-the-canvas"><span class="toc-section-number">2.2.1</span> Reference back to the canvas</a><ul>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#canvas"><span class="toc-section-number">2.2.1.1</span> <code>canvas</code></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#state"><span class="toc-section-number">2.2.2</span> State</a><ul>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#save"><span class="toc-section-number">2.2.2.1</span> <code>save()</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#restore"><span class="toc-section-number">2.2.2.2</span> <code>restore()</code></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#transformations"><span class="toc-section-number">2.2.3</span> Transformations</a><ul>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#scale-x-y"><span class="toc-section-number">2.2.3.1</span> <code>scale (x, y)</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#rotate-angle"><span class="toc-section-number">2.2.3.2</span> <code>rotate (angle)</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#translate-x-y"><span class="toc-section-number">2.2.3.3</span> <code>translate (x, y)</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#transform-a-b-c-d-e-f"><span class="toc-section-number">2.2.3.4</span> <code>transform (a, b, c, d, e, f)</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#settransform-a-b-c-d-e-f"><span class="toc-section-number">2.2.3.5</span> <code>setTransform (a, b, c, d, e, f)</code></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#compositing"><span class="toc-section-number">2.2.4</span> Compositing</a><ul>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#globalalpha"><span class="toc-section-number">2.2.4.1</span> <code>globalAlpha</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#globalcompositeoperation"><span class="toc-section-number">2.2.4.2</span> <code>globalCompositeOperation</code></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#colors-and-styles"><span class="toc-section-number">2.2.5</span> Colors and styles</a><ul>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#strokestyle"><span class="toc-section-number">2.2.5.1</span> <code>strokeStyle</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#fillstyle"><span class="toc-section-number">2.2.5.2</span> <code>fillStyle</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#createlineargradient-x0-y0-x1-y1-and-addcolorstop-pos-color"><span class="toc-section-number">2.2.5.3</span> <code>createLinearGradient (x0, y0, x1, y1)</code> and <code>addColorStop (pos, color)</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#createradialgradient-x0-y0-r0-x1-y1-r1-and-addcolorstop-pos-color"><span class="toc-section-number">2.2.5.4</span> <code>createRadialGradient (x0, y0, r0, x1, y1, r1)</code> and <code>addColorStop (pos, color)</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#createpattern-image-repetition"><span class="toc-section-number">2.2.5.5</span> <code>createPattern (image, repetition)</code></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#line-caps-and-joins"><span class="toc-section-number">2.2.6</span> Line caps and joins</a><ul>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#linewidth"><span class="toc-section-number">2.2.6.1</span> <code>lineWidth</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#linecap"><span class="toc-section-number">2.2.6.2</span> <code>lineCap</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#linejoin"><span class="toc-section-number">2.2.6.3</span> <code>lineJoin</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#miterlimit"><span class="toc-section-number">2.2.6.4</span> <code>miterLimit</code></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#shadows"><span class="toc-section-number">2.2.7</span> Shadows</a><ul>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#shadowoffsetx"><span class="toc-section-number">2.2.7.1</span> <code>shadowOffsetX</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#shadowoffsety"><span class="toc-section-number">2.2.7.2</span> <code>shadowOffsetY</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#shadowblur"><span class="toc-section-number">2.2.7.3</span> <code>shadowBlur</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#shadowcolor"><span class="toc-section-number">2.2.7.4</span> <code>shadowColor</code></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#simple-shapes-rectangles"><span class="toc-section-number">2.2.8</span> Simple shapes (rectangles)</a><ul>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#fillrect-x-y-w-h"><span class="toc-section-number">2.2.8.1</span> <code>fillRect (x, y, w, h)</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#strokerect-x-y-w-h"><span class="toc-section-number">2.2.8.2</span> <code>strokeRect (x, y, w, h)</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#clearrect-x-y-w-h"><span class="toc-section-number">2.2.8.3</span> <code>clearRect (x, y, w, h)</code></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#complex-shapes-paths"><span class="toc-section-number">2.2.9</span> Complex shapes (paths)</a><ul>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#beginpath"><span class="toc-section-number">2.2.9.1</span> <code>beginPath()</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#closepath"><span class="toc-section-number">2.2.9.2</span> <code>closePath()</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#stroke"><span class="toc-section-number">2.2.9.3</span> <code>stroke()</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#fill"><span class="toc-section-number">2.2.9.4</span> <code>fill()</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#lineto-x-y"><span class="toc-section-number">2.2.9.5</span> <code>lineTo (x, y)</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#moveto-x-y"><span class="toc-section-number">2.2.9.6</span> <code>moveTo (x, y)</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#rect-x-y-w-h"><span class="toc-section-number">2.2.9.7</span> <code>rect (x, y, w, h)</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#quadraticcurveto-cpx-cpy-x-y"><span class="toc-section-number">2.2.9.8</span> <code>quadraticCurveTo (cpx, cpy, x, y)</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#beziercurveto-cp1x-cp1y-cp2x-cp2y-x-y"><span class="toc-section-number">2.2.9.9</span> <code>bezierCurveTo (cp1x, cp1y, cp2x, cp2y, x, y)</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#arc-x-y-r-start-end-anticlockwise"><span class="toc-section-number">2.2.9.10</span> <code>arc (x, y, r, start, end, anticlockwise)</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#arcto-x1-y1-x2-y2-radius"><span class="toc-section-number">2.2.9.11</span> <code>arcTo (x1, y1, x2, y2, radius)</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#clip"><span class="toc-section-number">2.2.9.12</span> <code>clip()</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#ispointinpath-x-y"><span class="toc-section-number">2.2.9.13</span> <code>isPointInPath (x, y)</code></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#text"><span class="toc-section-number">2.2.10</span> Text</a><ul>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#font"><span class="toc-section-number">2.2.10.1</span> <code>font</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#textalign"><span class="toc-section-number">2.2.10.2</span> <code>textAlign</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#textbaseline"><span class="toc-section-number">2.2.10.3</span> <code>textBaseline</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#filltext-text-x-y-and-filltext-text-x-y-maxwidth"><span class="toc-section-number">2.2.10.4</span> <code>fillText (text, x, y)</code> and <code>fillText (text, x, y, maxWidth)</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#stroketext-text-x-y-and-stroketext-text-x-y-maxwidth"><span class="toc-section-number">2.2.10.5</span> <code>strokeText (text, x, y)</code> and <code>strokeText (text, x, y, maxWidth)</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#measuretexttext.width"><span class="toc-section-number">2.2.10.6</span> <code>measureText(text).width</code></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#drawing-images"><span class="toc-section-number">2.2.11</span> Drawing images</a><ul>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#drawimage-image-dx-dy"><span class="toc-section-number">2.2.11.1</span> <code>drawImage (image, dx, dy)</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#drawimage-image-dx-dy-dw-dy"><span class="toc-section-number">2.2.11.2</span> <code>drawImage (image, dx, dy, dw, dy)</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#drawimage-image-sx-sy-sw-sh-dx-dy-dw-dh"><span class="toc-section-number">2.2.11.3</span> <code>drawImage (image, sx, sy, sw, sh, dx, dy, dw, dh)</code></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#pixel-manipulation"><span class="toc-section-number">2.2.12</span> Pixel manipulation</a><ul>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#imagedata"><span class="toc-section-number">2.2.12.1</span> <code>ImageData</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#createimagedata-swsh-and-createimagedata-imagedata"><span class="toc-section-number">2.2.12.2</span> <code>createImageData (sw,sh)</code> and <code>createImageData (imagedata)</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#getimagedata-sx-sy-sw-sh"><span class="toc-section-number">2.2.12.3</span> <code>getImageData (sx, sy, sw, sh)</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#putimagedata-imagedata-dx-dy-and-putimagedata-imagedata-dx-dy-sx-sy-sw-sh"><span class="toc-section-number">2.2.12.4</span> <code>putImageData (imagedata, dx, dy)</code> and <code>putImageData (imagedata, dx, dy, sx, sy, sw, sh)</code></a></li>
+                                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#examples-of-pixel-manipulation"><span class="toc-section-number">2.2.12.5</span> Examples of pixel manipulation</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#appendices"><span class="toc-section-number">3</span> Appendices</a><ul>
+                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#reference-summary"><span class="toc-section-number">3.1</span> Reference summary</a></li>
+                    <li>
+                        <a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#some-elements-of-css"><span class="toc-section-number">3.2</span> Some elements of CSS</a><ul>
+                            <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#css-colors"><span class="toc-section-number">3.2.1</span> CSS Colors</a></li>
+                            <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#css-fonts"><span class="toc-section-number">3.2.2</span> CSS Fonts</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#html5-file-templates"><span class="toc-section-number">3.3</span> HTML5 file templates</a></li>
+                    <li>
+                        <a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#tools-and-tool-building"><span class="toc-section-number">3.4</span> Tools and tool building</a><ul>
+                            <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#how-to-write-your-own-functions-like-strokecircle-and-fillcircle"><span class="toc-section-number">3.4.1</span> How to write your own functions like <code>strokeCircle()</code> and <code>fillCircle()</code></a></li>
+                            <li><a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#addgriddeltacolorfont"><span class="toc-section-number">3.4.2</span> <code>addGrid(delta,color,font)</code></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="subheader">
+        Preface
+    </div>
+     
+
+
+
+    <h2 style="font-size: 20px; color: #2457ff; background-color: #313030"> SEGUNDA PARTE HTML </h2>
+    <p><a href="./HtmlTesis2.html" title="SegundaParte"> Segunda Part HTML5 </a></p>
+</body>
+    </html>
