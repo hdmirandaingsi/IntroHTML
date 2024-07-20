@@ -69,7 +69,7 @@ body {
 	width: 85%; /* ancho del sidebar */
 	float: left; /* flotar a la izquierda */
 	color: #ffff00; /* amarillo */
-	font-size: 18px; /* tamaño de fuente */
+	font-size: 18px; /* tamaÃ±o de fuente */
 	font-weight: bold; /* negrita */
 	margin: 20px;
 }
@@ -92,6 +92,9 @@ body {
 }
 
 
+.resultado-rojo {
+	color: red;
+}
 
 
 
