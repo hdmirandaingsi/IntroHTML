@@ -1,0 +1,69 @@
+/* pagina GENERAL */
+body {
+    display: flex;
+    color: #ff0085;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 175px;
+    background: #2a2a2a;
+}
+
+/* TITULO PRINCIPAL */
+
+.principalDiv {
+    font-size: 40px;
+    color: #cfde00;
+    background-color: #757575 
+    justify-content: center;
+}
+
+
+
+/* DIVS */
+.Recuadros {
+    margin:14px;
+    padding:3px;
+    border:4px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ccc; /* border-style: solid y border-width: 8px */
+    border-radius: 10px; /* borde suave */
+}
+
+    .Recuadros > div {
+        grid-template-columns: 1.5em 1.5em 1.5em;
+        grid-template-rows: 1.5em 1.5em;
+        justify-items: center;
+        align-items: center;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #f7f7f7;
+    }
+
+
+
+
+/* UNICAMENTE PARA EL math xmlns */
+
+/* styles.css */
+#math-formula {
+    /* Estilos para la fórmula completa */
+}
+#matrix {
+    display: grid;
+    grid-template-columns: 1.5em 1.5em 1.5em 1.5em;
+    grid-template-rows: 1.5em 1.5em 1.5em 1.5em;
+    justify-items: center;
+    align-items: center;
+    grid-column-gap: 0.5em; /* Agrega un espacio de 0.5em entre las columnas */
+}
+
+    #matrix > mrow {
+        display: block;
+        width: 6em;
+    }
